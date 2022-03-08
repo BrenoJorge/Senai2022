@@ -1,0 +1,25 @@
+package fill;
+
+public class Agenda2 {
+
+	public static void main(String[] args) {
+		
+		Contato c1 = new Contato();
+		
+		c1.id = 55;
+		c1.nome ="jague";
+		c1.idade = 1998908154;
+		
+		
+		Contato c2 = new Contato();
+		
+		c2.id = 55;
+		c2.nome = "marcos";
+		c2.idade = 1890888777;
+		
+		System.out.println(c1.id + "\t" + c1.nome + "\t" + c1.idade);
+		System.out.println(c2.id + "\t" + c2.nome + "\t" + c2.idade);
+
+	}
+
+}

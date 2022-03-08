@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\Desenvolvimento\Desktop\pokejava\.metadata\.plugins\org.eclipse.jdt.core
+4022764671.index
+3900526464.index

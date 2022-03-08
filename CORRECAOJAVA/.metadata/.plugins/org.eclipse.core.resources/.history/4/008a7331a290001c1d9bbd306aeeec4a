@@ -1,0 +1,21 @@
+package correcao;
+
+public class Correcao {
+		public static void main(String[] args) {
+		
+			imprimir();
+			
+			
+		}
+		
+		public static void imprimir() {
+			String nome[] = new String[4];
+			nome[0] = "felipe";
+			nome [1] = "joa";
+			nome[2] = "vitor";
+			nome[3] = "julia";
+			for(int i =0; i < 4; i++) {
+			System.out.println(nome[i]);
+			 }
+		}
+}

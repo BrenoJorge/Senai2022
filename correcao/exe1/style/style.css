@@ -1,0 +1,24 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background-color: rgb(238,130,238);
+	
+}
+.titulo{
+	font-size: 30px;
+	font-height: bold;
+	margin: 20px;	
+}
+button{
+	margin: 30px;
+	padding: 15px;
+	font-size: 15px;
+	background-color: white;
+}
+.min{
+	
+  color:blue;
+  
+}

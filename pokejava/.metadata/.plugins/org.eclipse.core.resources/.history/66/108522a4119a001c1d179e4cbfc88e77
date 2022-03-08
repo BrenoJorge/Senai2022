@@ -1,0 +1,11 @@
+package fill;
+
+public class Objeto {
+
+	public int id;
+	public String nome;
+	public int idade;
+
+	
+
+}

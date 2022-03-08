@@ -1,0 +1,9 @@
+package fill;
+public class MostrarBusca {
+	public static void mostrarDados(int b) {
+		for(int i = 0; i < b; i++){
+			System.out.println(b);
+         }
+    }
+	
+}

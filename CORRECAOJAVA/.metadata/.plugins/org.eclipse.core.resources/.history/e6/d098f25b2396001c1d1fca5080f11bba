@@ -1,0 +1,40 @@
+package correcao;
+import java.util.Scanner;
+public class Impossivel {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 Scanner leia = new Scanner(System.in);
+         
+         double a = leia.nextInt();
+         double b = leia.nextInt();
+         
+         double menor = (a*30)/100;
+         
+         double monte = b*1.0085;
+         
+         double i = 1;   
+         double par = 0;
+         
+               while (par > menor) {
+            	 
+            	   double monte2 = Math.pow(monte, i);
+            	   par = monte2/i;
+            	 
+            	   double ultimo = par;
+            	   
+       			System.out.printf("%d parcela de \t R$ %.2f\n", i, par);
+       			i+= i;
+       			
+       			if(par < ultimo) {
+       				ultimo = par;	
+       			}else {
+       				System.out.println("Não é possível aprovar este emprestimo com estas condições de juros");
+       				break;
+       			}
+       		}
+               
+                      
+	}
+
+}
