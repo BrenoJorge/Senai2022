@@ -87,10 +87,10 @@ public class LacoExe {
 		System.out.println("Digite um Valor: ");
 		num1 = entrada.nextInt();
 
-		acu = num1;
+		acu = 1;
 
-		for (int i = 0; i < num1; i++) {
-			acu = acu * (num1 - i);
+		for (int i = num1; i >= 1; i--) {
+			acu = acu * i;
 
 		}
 		System.out.println(acu);
