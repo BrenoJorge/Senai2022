@@ -93,30 +93,51 @@ public class VetorExe {
 
 	public static void exe3() {
 		Scanner leia = new Scanner(System.in);
-
 		int a[] = new int[10];
-		int b[] = new int[10];
-		int aux = 0;
+		int p2 = 0;
+		int i2 = 0;
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < a.length; i++) {
 			System.out.println("Digite um numero: ");
 			a[i] = leia.nextInt();
 		}
-		for (int j = 0; j < 10; j++) {
-
-			if (j % 2 == 0) {
-				b[j] = a[j] / 2;
-			} else {
-				b[j] = a[j] * 3;
+		for (int k = 0; k < 10; k++) {
+			if (a[k] % 2 == 0) {
+				p2++;
+			} else if (a[k] % 2 == 1) {
+				i2++;
 			}
 		}
-		for (int i = 0; i > 10; i++) {
-			System.out.print(a[i] + " ");
+
+		int par[] = new int[p2];
+		int impar[] = new int[i2];
+
+		for (int j = 0; j < a.length; j++) {
+
+			if (a[j] % 2 == 0) {
+				for (int g = 0; g < par.length; g++) {
+					par[g] = a[j] / 2;
+				}
+
+			} else {
+				for (int h = 0; h < impar.length; h++) {
+					impar[h] = a[j] * 3;
+				}
+
+			}
 		}
-		for (int i = 0; i > 10; i++) {
-			System.out.print(b[i] + " ");
+		for (int c = 0; c < 10; c++) {
+			System.out.print(a[c] + " ");
 		}
-		System.out.println("");
+		System.out.println();
+		for (int i = 0; i < par.length; i++) {
+			System.out.print(par[i] + " ");
+		}
+		System.out.println();
+		for (int z = 0; z < impar.length; z++) {
+			System.out.print(impar[z] + " ");
+		}
+		System.out.println();
 	}
 
 	public static void exe4() {
