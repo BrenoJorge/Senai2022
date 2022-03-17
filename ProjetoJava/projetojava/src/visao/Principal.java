@@ -45,19 +45,42 @@ public class Principal {
 				listarNotas();
 				break;
 			case 5:
+				System.out.print("Escolha: [1]buscar por ra.\t[2]buscar por nome.");
+				int aux2 = leia.nextInt();
+				switch (aux2) {
+				case 1:
+					System.out.print("Digite o ra do aluno que deseja buscar: ");
+					int ra = leia.nextInt();
+					int aux = obterAluno(ra);
+					if (aux != -1) {
+						System.out.println("Nome do aluno " + alunos[aux].nome);
+						System.out.println(
+								"Nome do aluno " + new SimpleDateFormat("dd/MM/yyyy").format(alunos[aux].nascimento));
+						System.out.println("Nome do aluno " + alunos[aux].calcIdade());
+						System.out.println("Situacao do aluno " + alunos[aux].obterConceito());
+						System.out.println("");
+					} else {
+						System.out.println("Alno não encontrado");
+					}
+					break;
+				case 2:
+					System.out.print("Digite o nome do aluno que deseja buscar: ");
+					String aux3 = leia.next();
+					if (obterAluno2(aux3).length > 1) {
+						for (int i = 0; i < obterAluno2(aux3).length; i++) {
+							if (obterAluno2(aux3)[i] != -1) {
+								System.out.println("Nome do aluno " + alunos[obterAluno2(aux3)[i]].nome);
+								System.out.println("Nome do aluno " + new SimpleDateFormat("dd/MM/yyyy")
+										.format(alunos[obterAluno2(aux3)[i]].nascimento));
+								System.out.println("Nome do aluno " + alunos[obterAluno2(aux3)[i]].calcIdade());
+								System.out.println("Situacao do aluno " + alunos[obterAluno2(aux3)[i]].obterConceito());
+								System.out.println("");
+							} else {
+								System.out.println("Alno não encontrado");
+							}
+						}
 
-				System.out.print("Digite o ra do aluno que deseja buscar: ");
-				int ra = leia.nextInt();
-				int aux = obterAluno(ra);
-				if (aux != -1) {
-					System.out.println("Nome do aluno " + alunos[aux].nome);
-					System.out.println(
-							"Nome do aluno " + new SimpleDateFormat("dd/MM/yyyy").format(alunos[aux].nascimento));
-					System.out.println("Nome do aluno " + alunos[aux].calcIdade());
-					System.out.println("Situacao do aluno " + alunos[aux].obterConceito());
-					System.out.println("");
-				} else {
-					System.out.println("Alno não encontrado");
+					}
 				}
 
 				break;
@@ -78,18 +101,43 @@ public class Principal {
 
 	}
 
+	public static int[] obterAluno2(String aux3) {
+
+		int aux = 0;
+		for (int i = 0; i < alunos.length; i++) {
+			if (alunos[i] != null) {
+				if (alunos[i].nome.contains(aux3)) {
+					aux++;
+				}
+			}
+		}
+		int indice[] = new int[aux];
+		aux = 0;
+		for (int i = 0; i < alunos.length; i++) {
+			if (alunos[i] != null) {
+				if (alunos[i].nome.contains(aux3)) {
+					indice[aux] = i;
+					aux++;
+				}
+			}
+		}
+
+		return indice;
+
+	}
+
 	public static String listarReprovados() {
 		System.out.println("Alunos REPROVADOS:");
 
 		for (int i = 0; i < alunos.length; i++) {
-			if (alunos[i] != null && alunos[i].obterConceito().equals("REPROVADOS")) {
+			if (alunos[i] != null && alunos[i].obterConceito().equals("REPROVADO")) {
 
 				System.out.println(alunos[i].nome);
 			}
 
 		}
 		return null;
-		
+
 	}
 
 	public static String listarAprovados() {
@@ -103,7 +151,7 @@ public class Principal {
 
 		}
 		return null;
-		
+
 	}
 
 	public static int obterAluno(int ra) {

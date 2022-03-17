@@ -12,10 +12,15 @@ public class Nota {
    public float obterMedia() {
 	   float soma = 0;
 	   float media = 0;
+	   int aux = 3;
 	   for (int i = 0; i < nota.length; i++) {
-		soma += nota[i];
+		   if(nota[i] == -1) {
+			   aux--;  
+		   }else {
+			   soma += nota[i];
+		   }		
 	}
-	   return media = soma/3;
+	   return media = soma/aux;
    }
    
 }

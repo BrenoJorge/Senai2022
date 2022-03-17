@@ -1,0 +1,247 @@
+package matrix;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Matrix {
+
+	static Scanner leia = new Scanner(System.in);
+
+	public static void main(String[] args) {
+
+		int menu = 0;
+		while (menu != 9) {
+			System.out.print(
+					"Escolha uma opção:\n[1] Exercício 1.\t[2] Exercício 2.\t[3] Exercício 3.\t[4] Exercício 4.\t[5] Exercício 5.\n[6] Exercício 6.\t[7] Exercício 7.\t[8] Exercício 8.\t [9] Sair.\nR:");
+			menu = leia.nextInt();
+			switch (menu) {
+			case 1:
+				exe1();
+				break;
+			case 2:
+				exe2();
+				break;
+			case 3:
+				exe3();
+				break;
+			case 4:
+				exe4();
+				break;
+			case 5:
+				exe5();
+				break;
+			case 6:
+				
+				Random aleatorio = new Random();
+				int matrix6[][] = new int[5][5];
+				
+				for (int i = 0; i < 5; i++) {
+					for (int j = 0; j < 5; j++) {
+						matrix6[i][j] = -1;
+					}
+				}
+				
+				boolean repetido = false;
+				
+				for (int i = 0; i < 5; i++) {
+					for (int j = 0; j < 5; j++) {
+						do {
+							matrix6[i][j] = aleatorio.nextInt(99);
+							for (int k = 0; k < 5; k++) {
+								for (int k2 = 0; k2 < 5; k2++) {
+										if(matrix6[i][j] == matrix6[k][k2] && k!=i && k2!=j) {
+											repetido = true;
+										} else {
+											repetido = false;
+										}
+								}
+							}
+						} while (repetido);
+						
+					}
+				}
+				
+				for (int i = 0; i < 5; i++) {
+					for (int j = 0; j < 5; j++) {
+						System.out.print(matrix6[i][j] + " ");
+					}
+					System.out.println();
+				}
+				
+				break;
+			case 7:
+				int matrix7[][] = new int[10][3];
+				int id = 1;
+				int prova1 = 0;
+
+				for (int i = 0; i < 10; i++) {
+					System.out.println("Aluno " + id);
+					id++;
+					for (int j = 0; j < 3; j++) {
+
+						System.out.print("Digite a nota do aluno na prova: ");
+						matrix7[i][j] = leia.nextInt();
+					}
+				}
+				for (int i = 0; i < 10; i++) {
+					int aux5 = 0;
+					for (int j = 0; j < 3; j++) {
+
+						aux5 = matrix7[i][j];
+
+						if (aux5 < matrix7[i][j]) {
+
+							if (j == 0) {
+								prova1++;
+
+							}
+						}
+					}
+				}
+				System.out.println("Quantidade de alunos que foram mal na primeira prova: " + prova1);
+				break;
+			case 8:
+				break;
+			case 9:
+				System.out.println("Obrigado por usar nossos sistemas!!!");
+				break;
+			default:
+				System.out.println("Tente novamente");
+				break;
+			}
+		}
+
+	}
+
+	public static void exe5() {
+		int matrix5[][] = new int[3][3];
+		int acu3 = 0;
+		for (int i = 0; i < 3; i++) {
+			System.out.println("Linha: " + i);
+			for (int j = 0; j < 3; j++) {
+				System.out.println("Coluna: " + j);
+				System.out.print("Digite um número: ");
+				matrix5[i][j] = leia.nextInt();
+				if (i == 0 && j == 1) {
+					acu3 += matrix5[i][j];
+				} else if (i == 0 && j == 2) {
+					acu3 += matrix5[i][j];
+				} else if (i == 1 && j == 2) {
+					acu3 += matrix5[i][j];
+				}
+
+			}
+		}
+		System.out.println("A soma a cima da diagonal principal e " + acu3);
+
+		
+	}
+
+	public static void exe4() {
+		int matrix4[][] = new int[3][3];
+		int acu2 = 0;
+		for (int i = 0; i < 3; i++) {
+			System.out.println("Linha: " + i);
+			for (int j = 0; j < 3; j++) {
+				System.out.println("Coluna: " + j);
+				System.out.print("Digite um número: ");
+				matrix4[i][j] = leia.nextInt();
+				if (i == 1 && j == 0) {
+					acu2 += matrix4[i][j];
+				} else if (i == 2 && j == 0) {
+					acu2 += matrix4[i][j];
+				} else if (i == 2 && j == 1) {
+					acu2 += matrix4[i][j];
+				}
+
+			}
+		}
+		System.out.println("A soma abaixo da diagonal principal e " + acu2);
+		
+	}
+
+	public static void exe3() {
+		int matrix3[][] = new int[3][3];
+		int acu = 0;
+		for (int i = 0; i < 3; i++) {
+			System.out.println("Linha: " + i);
+			for (int j = 0; j < 3; j++) {
+				System.out.println("Coluna: " + j);
+				System.out.print("Digite um número: ");
+				matrix3[i][j] = leia.nextInt();
+				acu += matrix3[i][j];
+			}
+		}
+		System.out.println("A soma da matrix é " + acu);		
+	}
+
+	public static void exe2() {
+		int matrix2[][] = new int[5][5];
+
+		for (int i = 0; i < 5; i++) {
+			System.out.println("Linha: " + i);
+			for (int j = 0; j < 5; j++) {
+				System.out.println("Coluna: " + j);
+				System.out.print("Digite um número: ");
+				matrix2[i][j] = leia.nextInt();
+			}
+		}
+		System.out.print("Digite o número que deseja buscar: ");
+		int busca = leia.nextInt();
+
+		int aux = 0;
+
+		for (int a = 0; a < 5; a++) {
+			for (int b = 0; b < 5; b++) {
+				if (matrix2[a][b] == busca) {
+					aux++;
+				}
+			}
+		}
+
+		int linha[] = new int[aux];
+		linha[0] = -1;
+		int coluna[] = new int[aux];
+		int aux2 = 0;
+
+		for (int c = 0; c < 5; c++) {
+			for (int d = 0; d < 5; d++) {
+				if (matrix2[c][d] == busca) {
+					linha[aux2] = c;
+					coluna[aux2] = d;
+					aux2++;
+				}
+			}
+
+		}
+		if (linha[0] != -1) {
+			for (int e = 0; e < aux; e++) {
+				System.out.println("Numero encontrado na linha " + linha[e] + " e coluna " + coluna[e]);
+			}
+		} else {
+			System.out.println("Nao encontrado");
+		}
+
+	}
+
+	public static void exe1() {
+		int matrix[][] = new int[2][2];
+		int maior = 0;
+
+		for (int i = 0; i < 2; i++) {
+			for (int j = 0; j < 2; j++) {
+
+				System.out.print("Digite um número: ");
+				matrix[i][j] = leia.nextInt();
+
+				if (maior < matrix[i][j]) {
+					maior = matrix[i][j];
+				}
+			}
+		}
+		System.out.print("O maior número foi: " + maior);
+		System.out.println();
+
+	}
+
+}
