@@ -1,0 +1,11 @@
+del lol\adc\*.txt
+del lol\mid\*.txt
+del lol\sup\*.txt
+del lol\jg\*.txt
+del lol\top\*.txt
+rd lol\adc
+rd lol\jg
+rd lol\mid
+rd lol\top
+rd lol\sup
+rd lol
