@@ -34,10 +34,36 @@ public class Matrix {
 				exe6();
 				break;
 			case 7:
-				exe7();
+				int matrix7[][] = new int[10][3];
+				int id = 1;
+				int prova1 = 0;
+
+				for (int i = 0; i < 10; i++) {
+					System.out.println("Aluno " + id);
+					id++;
+					for (int j = 0; j < 3; j++) {
+
+						System.out.print("Digite a nota do aluno na prova: ");
+						matrix7[i][j] = leia.nextInt();
+					}
+				}
+				for (int i = 0; i < 10; i++) {
+					for (int j = 0; j < 3; j++) {
+
+						aux5 = matrix7[i][j];
+
+						if (aux5 < matrix7[i][j]) {
+
+							if (j == 0) {
+								prova1++;
+
+							}
+						}
+					}
+				}
+				System.out.println("Quantidade de alunos que foram mal na primeira prova: " + prova1);
 				break;
 			case 8:
-				exe8();
 				break;
 			case 9:
 				System.out.println("Obrigado por usar nossos sistemas!!!");
@@ -47,101 +73,6 @@ public class Matrix {
 				break;
 			}
 		}
-
-	}
-
-	public static void exe8() {
-		Double a[][] = new Double [2][2];
-        Double b[][] = new Double [2][2];
-        System.out.println("Matrix 1");
-        for(int i = 0; i < 2; i++){
-              for(int j = 0; j < 2; j++){
-                   a[i][j] = leia.nextDouble();
-              }
-        }
-        System.out.println("Matrix 2");
-        for(int i = 0; i < 2; i++){
-              for(int j = 0; j < 2; j++){
-                   b[i][j] = leia.nextDouble();
-              }
-        }
-        int menuu = 0;
-        while(menuu != 5){
-            System.out.println("[1]Somar as duas matrizes");
-            menuu = leia.nextInt();
-            switch(menuu){
-              case 1:
-                     double acu = 0;
-                       for(int i = 0; i < 2; i++){
-                           for(int j = 0; j < 2; j++){
-                               acu = acu +a[i][j] + b[i][j];
-                          }
-                    }
-                      System.out.println("A soma das matrizes é " + acu);
-              break;
-              case 2:
-                     
-              break;
-              case 3:
-              break;
-              case 4:
-              break;
-              case 5:
-              break;
-            }
-        }
-		
-	}
-
-	public static void exe7() {
-		int matrix7[][] = new int[10][3];
-		int id = 1;
-		int prova1 = 0;
-		int prova2 = 0;
-		int prova3 = 0;
-
-		for (int i = 0; i < 3; i++) {
-			System.out.println("Aluno " + id);
-			id++;
-			for (int j = 0; j < 3; j++) {
-
-				System.out.print("Digite a nota do aluno na prova: ");
-				matrix7[i][j] = leia.nextInt();
-			}
-		}
-		for (int i = 0; i < 3; i++) {
-			int aux5 = matrix7[i][0];
-
-			if (aux5 < matrix7[i][1] && aux5 < matrix7[i][2]) {
-				prova1++;
-
-			} else if (aux5 == matrix7[i][1] || aux5 == matrix7[i][2]) {
-				prova1++;
-			}
-
-		}
-		for (int i = 0; i < 3; i++) {
-			int aux5 = matrix7[i][1];
-
-			if (aux5 < matrix7[i][0] && aux5 < matrix7[i][2]) {
-				prova2++;
-
-			}
-
-		}
-		for (int i = 0; i < 3; i++) {
-			int aux5 = matrix7[i][2];
-
-			if (aux5 < matrix7[i][0] && aux5 < matrix7[i][1]) {
-				prova3++;
-
-			}
-
-		}
-
-		System.out.println("Quantidade de alunos que foram mal na primeira prova: " + prova1);
-		System.out.println("Quantidade de alunos que foram mal na segunda prova: " + prova2);
-		System.out.println("Quantidade de alunos que foram mal na terceira prova: " + prova3);
 
 	}
 
