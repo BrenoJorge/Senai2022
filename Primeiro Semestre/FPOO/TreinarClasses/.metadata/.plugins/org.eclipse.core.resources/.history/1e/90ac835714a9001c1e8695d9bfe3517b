@@ -1,0 +1,38 @@
+package visao;
+import java.util.Scanner;
+import modelo.Veiculo;
+public class Menu {
+
+	public static void main(String[] args) {
+		Scanner leia = new Scanner(System.in);
+		
+		Veiculo veiculos[] = new Veiculo[10];
+		
+		int menu = 0;
+		while(menu != 3) {
+			switch(menu) {
+			case 1:
+				for (int i = 0; i < veiculos.length; i++) {
+					if(veiculos[i] == null) {
+						String placa = leia.next();
+						String marca = leia.next();
+						String modelo = leia.next();
+						int anoModelo = leia.nextInt();
+						int anoFabricado = leia.nextInt();
+						String cor = leia.next();
+						
+						veiculos[i] = new Veiculo(placa,marca,modelo,anoModelo,anoFabricado, cor);
+					}
+				}
+				break;
+			case 2:
+				for (int i = 0; i < veiculos.length; i++) {
+					if(veiculos[i] != null){
+						veiculos[i].paraString();
+					}
+				}
+				break;
+			}
+		}
+	}
+}
