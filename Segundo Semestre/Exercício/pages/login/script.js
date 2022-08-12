@@ -35,7 +35,7 @@ form.addEventListener("submit", function (e) {
     })
 
     if(acessando){
-        window.location.href = "assets/loja/loja.html"
+        window.location.href = "../loja/index.html"
     }else{
         alert("Usuario ou senha invalido")
     }   

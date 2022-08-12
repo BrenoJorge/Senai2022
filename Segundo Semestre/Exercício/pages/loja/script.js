@@ -1,31 +1,31 @@
 var produtos = [
     {
-        "img" : "../img/eevee.png",
+        "img" : "../../assets/img/eevee.png",
         "nome" : "Eevee Pelúcia Original Pokémon",
         "preco" : "R$114,00"
     },
     {
-        "img" : "../img/bolsapikachu.jpg",
+        "img" : "../../assets/img/bolsapikachu.jpg",
         "nome" : "Pikachu Evento Pelúcia Original Pokémon",
         "preco" : "R$159,90"
     },
     {
-        "img" : "../img/gatinho.jpg",
+        "img" : "../../assets/img/gatinho.jpg",
         "nome" : "Gatinho Pelúcia Original Pokémon",
         "preco" : "R$99,90"
     },
     {
-        "img" : "../img/gatao.jpg",
+        "img" : "../../assets/img/gatao.jpg",
         "nome" : "Gatao Pelúcia Original Pokémon",
         "preco" : "R$199,90"
     },
     {
-        "img" : "../img/eeveeA.jpg",
+        "img" : "../../assets/img/eeveeA.jpg",
         "nome" : "Eevee Água Pelúcia Original Pokémon",
         "preco" : "R$59,90"
     },
     {
-        "img" : "../img/etzinho.jpeg",
+        "img" : "../../assets/img/etzinho.jpeg",
         "nome" : "Etzinho Pelúcia Lendário",
         "preco" : "INDISPONÍVEL"
     }
