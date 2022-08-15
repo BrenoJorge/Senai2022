@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+div{
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 1%;
+    width: 50%;
+    margin: 2%;
+    font-size: 2vh;
+    font-family: 'Silkscreen', cursive;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2, p {
+    margin: 0 10px;
+}
+
+.modelo, .check{
+    display: none;
+    visibility: hidden;
+}
+
+.Userid{
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.id{
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.title{
+    grid-area: 1 / 6 / 2 / 7;
+}
+
+input{
+    grid-area: 1 / 10 / 2 / 11;       
+}

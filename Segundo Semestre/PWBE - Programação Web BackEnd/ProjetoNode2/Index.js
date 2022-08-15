@@ -78,19 +78,7 @@ app.post("/inserir", urlencodedParser, function (request, response) {
   }
 })
 
-app.get("/inserir", (req, res) => {
-
-  let string = 'SELECT * FROM clientes'
-  con.query(string, (err, result) => {
-    if (err) {
-
-    } else {
-      return res.json(result)
-    }
-  })
-})
-
-app.get("/inserir/:id", (req, res) => {
+app.get("/BuscarCliente/:id", (req, res) => {
   const { id } = req.params
   let string = `SELECT * FROM clientes WHERE id_cliente='${id}'`
 
@@ -106,7 +94,7 @@ app.get("/inserir/:id", (req, res) => {
 
 })
 
-app.get("/BuscarClientes", (req, res) => {
+app.get("/ListarClientes", (req, res) => {
   let string = `SELECT * FROM clientes`
   con.query(string, (err, result) => {
     if (err) {
@@ -119,7 +107,7 @@ app.get("/BuscarClientes", (req, res) => {
   })
 })
 
-app.get("/deleta/:id", (req, res) => {
+app.get("/deletar/:id", (req, res) => {
   const { id } = req.params
   let string = `DELETE from clientes WHERE id_cliente='${id}'`
 
