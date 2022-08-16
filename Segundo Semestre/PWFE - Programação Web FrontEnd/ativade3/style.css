@@ -41,7 +41,7 @@ h2, p {
 }
 
 .title{
-    grid-area: 1 / 6 / 2 / 7;
+    grid-area: 1 / 7 / 2 / 4;
 }
 
 input{

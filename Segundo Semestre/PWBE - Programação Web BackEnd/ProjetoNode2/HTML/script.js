@@ -1,4 +1,4 @@
-fetch('http://10.87.207.21:3001/BuscarClientes')
+fetch('http://10.87.207.21:3001/ListarClientes')
 .then(response => response.json())
 .then((data) => {
     let dados = data

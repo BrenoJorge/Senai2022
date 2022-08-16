@@ -4,6 +4,7 @@ fetch("https://jsonplaceholder.typicode.com/todos")
     
     console.log(dado)
     let datas = dado
+    
     let tabela = document.querySelector('.modelo')
 
     datas.forEach((data) => {
