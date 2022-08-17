@@ -53,6 +53,8 @@ div{
     display: flex;
     justify-content: flex-start;
     width: 100%;
+    position: relative;
+    top: 25px;
 }
 
 .model {
