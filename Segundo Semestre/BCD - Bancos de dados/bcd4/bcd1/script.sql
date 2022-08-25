@@ -44,3 +44,10 @@ SELECT * FROM telefones;
 SELECT * FROM clientes;
 
 show tables;
+
+create view vw_cliente as
+select c.id_cliente, c.nome, c.nascimento, c.sexo, c.peso, t.telefone from clientes c
+inner join telefones t
+on c.id_cliente = t.id_cliente;
+
+select * from vw_cliente;

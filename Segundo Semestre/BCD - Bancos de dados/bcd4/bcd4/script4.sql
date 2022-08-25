@@ -60,3 +60,14 @@ IGNORE 1 ROWS;
 
 create view duplicatas_aberto as
 select * from compra where status = "Em aberto"
+
+select * from cliente c
+left join telefones t
+on c.cod_cliente = t.cod_cliente;
+
+create view vw_clientes as
+select c.cod_cliente, c.nome, c.endereco, c.uf, t.telefone as telefones from cliente c
+inner join telefones t
+on c.cod_cliente = t.cod_cliente;
+
+select * from vw_clientes;

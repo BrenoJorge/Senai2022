@@ -77,3 +77,10 @@ FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
+
+create view vw_cliente as
+select a.id_aluno, a.nome, a.nascimento, a.sexo, a.peso, t.telefone from aluno a
+inner join telefones t
+on a.id_aluno = t.id_aluno;
+
+select * from vw_cliente;

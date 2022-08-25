@@ -81,3 +81,10 @@ LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
 SELECT * FROM mot_linha;
+
+create view vw_cliente as
+select m.cpf, m.nome, t.telefone from motorista m
+inner join telefones t
+on m.cpf = t.cpf_motorista;
+
+select * from vw_cliente;
