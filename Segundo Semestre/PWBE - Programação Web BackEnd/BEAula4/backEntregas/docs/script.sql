@@ -58,38 +58,43 @@ describe itens;
 
 show tables;
 
--- DML Importação dos dados com LOAD DATA de arquivos CSV
-
-LOAD DATA INFILE 'D:/wellington/senai2022/2des/bcd/aula05/csv/entregas/clientes.csv'
+LOAD DATA INFILE 'C:/Users/Aluno/Desktop/Senai2022/Segundo Semestre/BCD - Bancos de dados/bcd4/bcd5/clientes.csv'
 INTO TABLE clientes
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'D:/wellington/senai2022/2des/bcd/aula05/csv/entregas/telefones.csv'
+LOAD DATA INFILE 'C:/Users/Aluno/Desktop/Senai2022/Segundo Semestre/BCD - Bancos de dados/bcd4/bcd5/telefones.csv'
 INTO TABLE telefones
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'D:/wellington/senai2022/2des/bcd/aula05/csv/entregas/produtos.csv'
-INTO TABLE produtos
-FIELDS TERMINATED BY ';'
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
-IGNORE 1 ROWS;
-
-LOAD DATA INFILE 'D:/wellington/senai2022/2des/bcd/aula05/csv/entregas/entregadores.csv'
+LOAD DATA INFILE 'C:/Users/Aluno/Desktop/Senai2022/Segundo Semestre/BCD - Bancos de dados/bcd4/bcd5/entregadores.csv'
 INTO TABLE entregadores
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'D:/wellington/senai2022/2des/bcd/aula05/csv/entregas/pedidos.csv'
+LOAD DATA INFILE 'C:/Users/Aluno/Desktop/Senai2022/Segundo Semestre/BCD - Bancos de dados/bcd4/bcd5/produtos.csv'
+INTO TABLE produtos
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE 'C:/Users/Aluno/Desktop/Senai2022/Segundo Semestre/BCD - Bancos de dados/bcd4/bcd5/pedidos.csv'
 INTO TABLE pedidos
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE 'C:/Users/Aluno/Desktop/Senai2022/Segundo Semestre/BCD - Bancos de dados/bcd4/bcd5/items.csv'
+INTO TABLE itens
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
@@ -102,34 +107,21 @@ select * from produtos;
 select * from pedidos;
 select * from itens;
 
--- DQL Junção de tabelas
+select * from clientes limit 1;
+
 select * from clientes join telefones on clientes.id_cliente = telefones.id_cliente;
-select * from clientes c join telefones t on c.id_cliente = t.id_cliente;
 
-select * from clientes c
-join telefones t
-on c.id_cliente = t.id_cliente;
-
--- JOIN = INNER, LEFT, RIGHT
-
-insert into clientes values (null,"11122233311","Marcelo","13458777","1A","Fundos");
--- Exemplo de inner
-select * from clientes c
-inner join telefones t
-on c.id_cliente = t.id_cliente;
--- Exemplo de Left
-select * from clientes c
-left join telefones t
-on c.id_cliente = t.id_cliente;
--- Exemplo de Right
-select * from telefones t
-right join clientes c
-on c.id_cliente = t.id_cliente;
-
--- Salvando a Consulta
 create view vw_clientes as
-select c.id_cliente, c.cpf, c.nome, c.cep, c.numero, c.complemento, t.numero as telefone from clientes c
+select c.id_cliente, c.cpf, c.nome, c.cep, c.numero, t.numero as telefone from clientes c
 inner join telefones t
 on c.id_cliente = t.id_cliente;
 
 select * from vw_clientes;
+
+select * from clientes c
+left join telefones t
+on c.id_cliente = t.id_cliente;
+
+select * from clientes c
+right join telefones t
+on c.id_cliente = t.id_cliente;
