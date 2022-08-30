@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Drugs</title>
+</head>
+<body>
+    <button onclick="showModal()">Cadastrar Novo Produto</button>
+    <button onclick="showModalB()">Buscar Produto</button>
+    <div class="produtos">
+        <div class="produto model">
+            <p class="nome">Nome produto</p>
+            <p class="preco">Preco do produto</p>
+            <button class="button">Comprar</button>
+        </div>
+    </div>
+
+    <div class="modal model">
+        <div class="form-modal">
+            <input id="cod" type="text" placeholder="Codigo do produto">
+            <input id="nome" type="text" placeholder="Nome do produto">
+            <input id="qtd" type="text" placeholder="Quantidade do produto">
+            <input id="preco" type="text" placeholder="Valor do produto">
+
+            <button onclick="cadastrar()">Cadastrar</button>
+            <button onclick="showModal()" id="cancelar">Cancelar</button>
+        </div>
+    </div>
+
+    <div class="modalB model">
+        <div class="form-modalB">
+            <input id="codd" type="text" placeholder="Codigo do produto" disabled>
+            <input id="nomee" type="text" placeholder="Nome do produto" disabled>
+            <input id="qtdd" type="text" placeholder="Quantidade do produto" disabled>
+            <input id="precoo" type="text" placeholder="Valor do produto" disabled>
+
+            <button onclick="buscar()">Buscar</button>
+            <button onclick="showModalB()" id="cancelar">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
