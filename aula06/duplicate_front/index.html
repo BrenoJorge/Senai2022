@@ -9,17 +9,17 @@
     <title>Document</title>
 </head>
 
-<body>
+<body onload="carregarInfo()">
     <table>
         <tr class="linha">
             <td class="coluna1">id</td>
             <td class="coluna2">nome</td>
             <td class="coluna3">endereco</td>
-            <td><button onclick="showModal(), preencher(this)">Telefones</button></td>
+            <td class="coluna4"></td>
 
             <td class="telefones model">
                 <p class="tel"></p>
-                <button class="fechar" onclick="showModal()">fechar</button>
+                <button class="fechar" onclick="showModal(this)">fechar</button>
             </td>
         </tr>
         

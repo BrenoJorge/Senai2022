@@ -60,5 +60,5 @@ table, td{
 
 .model{
     display: none;
-    visibility: inherit;
+    visibility: hidden;
 }

@@ -18,28 +18,21 @@ const clientes = (lista) => {
     })
 
     //remover duplicados
-    for (let i = 1; i < lista.length; i++) {
-        if (lista[i].cod_cli == lista[i - 1].cod_cli) {
+    for (let i = 0; i < lista.length; i++) {
 
-            lista[i - 1].telefones.forEach((tel) => {
-                lista[i].telefones.push(tel)
-            })
-            lista.splice(lista.indexOf(lista[i - 1]), 1)
+        for (let j = 0; j < lista.length; j++) {
 
+            if (lista[i].cod_cli == lista[j].cod_cli && i != j) {
+
+                    lista[j].telefones.forEach((tel) => {
+                        lista[i].telefones.push(tel)
+                    })
+
+                    lista.splice(lista.indexOf(lista[j]), 1)
+                    
+                }
         }
     }
-
-    for (let i = 1; i < lista.length; i++) {
-        if (lista[i].cod_cli == lista[i - 1].cod_cli) {
-
-            lista[i - 1].telefones.forEach((tel) => {
-                lista[i].telefones.push(tel)
-            })
-            lista.splice(lista.indexOf(lista[i - 1]), 1)
-
-        }
-    }
-
 
     return lista
 }
