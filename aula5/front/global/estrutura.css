@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+}
+
+aside{
+    width: 20vw;
+    height: 100vh;
+    background-color: rgb(118, 118, 236);
+}
+
+main{
+    width: 80vw;
+    height: 100vh;
+    padding: 15px;
+}
+
+ul{
+    list-style: none;
+}
+
+ul > li{
+    margin: 15px;
+}

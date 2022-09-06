@@ -18,7 +18,6 @@ app.get('/buscar/:cod', (req, res) =>{
     let query = `select * from produtos where cod='${req.params.cod}'`
     conDB.query(query, (err, result) =>{
         if( err == null){
-            console.log(result)
             res.status(200).json(result).end()
         }
     })
@@ -48,6 +47,30 @@ app.get("/produtos", (req, res) => {
             res.status(201).json(result).end()
         } else {
             res.status(500).json(err).end()
+        }
+    })
+})
+
+app.delete("/produto", (req, res) => {
+    let query = `DELETE FROM produtos where cod= '${req.body.cod}'`
+
+    conDB.query(query, (err, result)=>{
+        if(err == null){
+            res.status(200).json(req.body).end()
+        } else {
+            res.status(400).json(err).end()
+        }
+    })
+})
+
+app.put("/produto", (req, res) => {
+    let query = `UPDATE produtos SET cod = '${req.body.cod}', nome = '${req.body.nome}', qtd = ${req.body.qtd}, preco = ${req.body.preco} where cod = '${req.body.cod}'`
+
+    conDB.query(query, (err, result)=>{
+        if(err == null){
+            res.status(200).json(req.body).end()
+        } else {
+            res.status(200).json(err).end()
         }
     })
 })

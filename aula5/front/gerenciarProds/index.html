@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gerenciador</title>
+</head>
+<body>
+    <aside>
+        <nav>
+            <ul>
+                <li>Gerenciar Produtos</li>
+                <li>Gerenciadr Funcionarios</li>
+                <li>Efetuar Comprar</li>
+                <li>Relatorio de Venda</li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>codigo</th>
+                    <th>nome</th>
+                    <th>quatidade</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody id="list">
+                <tr class="linhamodelo model">
+                    <td>ABC65645</td>
+                    <td>COCA-COLA</td>
+                    <td>23</td>
+                    <td>R$5,50</td>
+                    <td><button id="excluir"><img class="icone" src="https://cdn-icons-png.flaticon.com/512/54/54324.png" ></button></td>
+                    <td><button id="editar"><img class="icone" src="https://cdn-icons-png.flaticon.com/512/1160/1160515.png"></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <div class="modal excluir model">
+        <div class="modal-content">
+
+            <button><img class="icone" onclick="fecharModalExcluir()" src="https://cdn-icons-png.flaticon.com/512/2696/2696714.png"></button>
+
+            <div class="modal-content-body">
+                <h3>Alerta de exclução</h3>
+                <p>Tem certza que dejesa excluir produto de codigo : <span id="cod"></span></p>
+            </div>
+
+            <div class="modal-content-footer">
+                <button class="btn confirm" onclick="excluirProduto()">Confimar</button>
+                <button class="btn cancel">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal editar model">
+        <div class="modal-content">
+            <button><img class="icone" onclick="fecharModalEditar()" src="https://cdn-icons-png.flaticon.com/512/2696/2696714.png"></button>
+            <div class="modal-content-body">
+                <input type="text" id="codigo" placeholder="Codigo do produto">
+                <input type="text" id="nome" placeholder="Nome do produto">
+                <input type="number" id="quantidade" placeholder="Quatidade do produto">
+                <input type="number" id="valor" placeholder="Valor do produto">
+            </div>
+
+            <div class="modal-content-footer">
+                <button class="btn confirm" onclick="editarProduto()">Confimar</button>
+                <button class="btn cancel">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
