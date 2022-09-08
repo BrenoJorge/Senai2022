@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+main {
+    display: flex;
+}
+
+#card-debito, #card-credito{
+    display:flex;
+    border: 1px solid black;
+    margin: 10px; 
+    overflow: auto;
+    height: 100%;
+}
+
+#sub-header{
+    display:flex;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    padding: 5px;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.coluna{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
