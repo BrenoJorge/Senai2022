@@ -8,13 +8,13 @@ create table produtos(
     n_lancamento integer primary key not null auto_increment,
     data date not null,
     descricao varchar(100) not null,
-    valor float(4,2) not null,
+    valor float(5,2) not null,
     tipo varchar(1) not null
 );
 
 describe produtos;
 
-LOAD DATA INFILE 'C:/Users/Aluno/Desktop/Projeto Japones/docs/dados.csv'
+LOAD DATA INFILE 'C:/Users/Aluno/Desktop/Senai2022/Projeto/Projeto Japones-back/docs/dados.csv'
 INTO TABLE produtos
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'

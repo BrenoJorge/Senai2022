@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: rgb(80, 80, 80);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+header > h3{
+    color: white;
+    margin: 0 10px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coluna{
+    margin: 30px;
+}
+
+#card-clientes{
+    display: flex;
+}

@@ -15,68 +15,114 @@
         <h1>Livro Caixa</h1>
         <div id="sub-header">
             <p>Filtro :</p>
+            <select onchange="filtrar(this.value)" id="filtro">
+                <option></option>
+            </select>
             <p>Novo Lançamento</p>
-            <button>+</button>
+            <button id="cadastrar" class="btn" onclick="showModal()">+</button>
         </div>
     </header>
     <main>
-        <div id="card-debito">
-            <div id="N-lancamento" class="coluna">
-                <h2>N-lancamento</h2>
-                <div id="dado-lancamento-debito">
+        <div class="coluna">
+            <h2>Debitos</h2>
+            <div id="card-debito">
+                <div id="N-lancamento" class="coluna">
+                    <p>N-lancamento</p>
+                    <div id="dado-lancamento-debito">
+                    </div>
                 </div>
-            </div>
-            <div id="data" class="coluna">
-                <h2>Data</h2>
-                <div id="dados-data-debito">
+                <div id="data" class="coluna">
+                    <p>Data</p>
+                    <div id="dados-data-debito">
+                    </div>
                 </div>
-            </div>
-            <div id="descricao" class="coluna">
-                <h2>Descricao</h2>
-                <div id="dados-descricao-debito">
+                <div id="descricao" class="coluna">
+                    <p>Descricao</p>
+                    <div id="dados-descricao-debito">
+                    </div>
                 </div>
-            </div>
-            <div id="valor" class="coluna">
-                <h2>Valor</h2>
-                <div id="dados-valor-debito">
+                <div id="valor" class="coluna">
+                    <p>Valor</p>
+                    <div id="dados-valor-debito">
+                    </div>
                 </div>
-            </div>
-            <div id="tipo" class="coluna">
-                <h2>Tipo</h2>
-                <div id="dados-lancamento-debito">
+                <div id="tipo" class="coluna">
+                    <p>Tipo</p>
+                    <div id="dados-lancamento-debito">
+                    </div>
                 </div>
             </div>
         </div>
-        <div id="card-credito">
-            <div id="N-lancamento" class="coluna">
-                <h2>N-lancamento</h2>
-                <div id="dado-lancamento-credito">
+        <div class="coluna">
+            <h2>Créditos</h2>
+            <div id="card-credito">
+                <div id="N-lancamento" class="coluna">
+                    <p>N-lancamento</p>
+                    <div id="dado-lancamento-credito">
+                    </div>
                 </div>
-            </div>
-            <div id="data" class="coluna">
-                <h2>Data</h2>
-                <div id="dados-data-credito">
+                <div id="data" class="coluna">
+                    <p>Data</p>
+                    <div id="dados-data-credito">
+                    </div>
                 </div>
-            </div>
-            <div id="descricao" class="coluna">
-                <h2>Descricao</h2>
-                <div id="dados-descricao-credito">
+                <div id="descricao" class="coluna">
+                    <p>Descricao</p>
+                    <div id="dados-descricao-credito">
+                    </div>
                 </div>
-            </div>
-            <div id="valor" class="coluna">
-                <h2>Valor</h2>
-                <div id="dados-valor-credito">
+                <div id="valor" class="coluna">
+                    <p>Valor</p>
+                    <div id="dados-valor-credito">
+                    </div>
                 </div>
-            </div>
-            <div id="tipo" class="coluna">
-                <h2>Tipo</h2>
-                <div id="dados-lancamento-credito">
+                <div id="tipo" class="coluna">
+                    <p>Tipo</p>
+                    <div id="dados-lancamento-credito">
+                    </div>
                 </div>
             </div>
         </div>
 
-        </div>
     </main>
+    <footer>
+        <h2 id="saldo"></h2>
+    </footer>
+    <div id="card-cadastrar" class="modal">
+
+        <div id="form-cadastrar">
+
+            <div id="header-cadastrar">
+                <h2>Criar Novo Lançamento</h2>
+                <button id="cancelar" class="btn" onclick="showModal()">X</button>
+            </div>
+            <div id="main-cadastrar">
+                <div class="linha">
+                    <label>Descrição:</label>
+                    <input type="text" placeholder="Cafezinho" id="descricaoC">
+                </div>
+
+                <div class="linha2">
+                    <label>Tipo:</label>
+                    <select id="tipoC">
+                        <option>Entrada</option>
+                        <option>Saida</option>
+                    </select>
+                </div>
+
+                <div class="linha">
+                    <label>Valor:</label>
+                    <input type="number" id="valorC">
+                </div>
+
+            </div>
+            <div class="linha2">
+                <h2>*</h2>
+                <button onclick="cadastrar()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
