@@ -1,0 +1,9 @@
+.card-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-item > h3 {
+    margin: px;
+}
