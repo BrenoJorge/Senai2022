@@ -8,8 +8,7 @@ import Chamado from '../../comps/itenHome';
 
 export default function telaHome({ route }) {
     var id = route.params
-
-    console.log(id)
+    const [busca, setBusca] = useState("")
 
     const chamados = [
         {
@@ -48,23 +47,41 @@ export default function telaHome({ route }) {
         }
     ]
 
+    const chamadosFiltrados = useMemo(() => {
+        const lowerBusca = busca.toLowerCase();
+        return chamados.filter((chamado) =>
+            chamado.titulo.toLowerCase().startsWith(lowerBusca)
+        );
+    }, [busca])
+        
     return (
         <View style={styles.v}>
+            <TextInput style={{... styles.inp1}} placeholder="Buscar manutenção" onChangeText={(value) => { setBusca(value)}}></TextInput>
             {
-                chamados.map((c, indice) => {
-                    if (c.user_id == id.id) {
-
+                chamadosFiltrados.map((c,i) => {
+                        console.log("entrou")
                         return (
-                            <Chamado key={indice} ch={c}/>
+                            <Chamado key={i} ch={c}/>
                         )
-                    }
                 })
             }
         </View>
     )
 }
 
+
+
 const styles = StyleSheet.create({
+    inp1: {
+        height: 40,
+        width: 300,
+        backgroundColor: "#fff",
+        borderRadius: 5,
+        marginTop: 20,
+        paddingLeft: 10,
+        borderColor: "#7242F5",
+        borderBottomWidth: 3
+    },
     v: {
         height: "100%",
         display: "flex",
@@ -73,6 +90,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         paddingTop: 80,
         backgroundColor: "#fff"
-    },
+    }
     
 });

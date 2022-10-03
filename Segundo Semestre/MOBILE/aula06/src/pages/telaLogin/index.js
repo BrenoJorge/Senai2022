@@ -14,8 +14,10 @@ export default function telaLogin({ navigation }) {
     const users = [
         {
             "id": 1,
-            "email": "user01@empresa.com",
-            "senha": "teste1234",
+            //"email": "user01@empresa.com",
+            "email": "1",
+            //"senha": "teste1234",
+            "senha": "1",
         },
         {
             "id": 2,
