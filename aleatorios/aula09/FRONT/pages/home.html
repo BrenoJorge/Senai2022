@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../global/style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Patrimonio</title>
+</head>
+
+<body onload="carregar()">
+    <header>
+        <h3>Cadastro de patrimonio</h3>
+        <button id="novo" onclick="showModal()">Novo</button>
+    </header>
+    <main>
+        <div class="card-item model">
+            <div>
+                <h3 class="ni">NI: </h3>
+                <h3 class="dataA">Data de aquisição: </h3>
+                <h3 class="denominacao">Denominação: </h3>
+                <h3 class="valor">Valor: </h3>
+            </div>
+            <img src="../assets/">
+        </div>
+    </main>
+
+    <div id="card-cadastrar" class="model">      
+        <div id="form-cadastrar">
+            <button id="fechar" onclick="showModal()">X</button>
+            <h2>Cadastrar novo patrimonio</h2>
+            <input type="number" id="ni" placeholder="NI">
+            <input type="date" id="aquisicao" placeholder="Aquisição">
+            <input type="number" id="valor" placeholder="Valor">
+            <input type="text" id="img" placeholder="Imagem E  x: Computador.png">
+            <input type="submit" id="cadastrar">
+        </div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+
+</html>

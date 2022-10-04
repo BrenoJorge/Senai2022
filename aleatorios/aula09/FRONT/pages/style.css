@@ -1,0 +1,67 @@
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+input{
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid rgb(124, 124, 124);
+    outline: none;
+    margin: 10px;
+    text-align: center;
+}
+
+.card-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    font-size: 15px;
+    margin: 20px;
+}
+
+.card-item > div > h3 {
+    margin: 10px;
+}
+
+.card-item > img {
+    height: 150px;
+    width: 150px;
+}
+
+.model{
+    visibility: hidden;
+    display: none;
+}
+
+#fechar{
+    position: absolute;
+    top: 30%;
+    left: 37%;
+}
+
+#card-cadastrar{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: rgb(0,0,5, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-cadastrar{
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
