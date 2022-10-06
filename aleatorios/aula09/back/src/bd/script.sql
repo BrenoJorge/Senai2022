@@ -13,7 +13,7 @@ create table itens(
 
 describe itens;
 
-LOAD DATA INFILE 'C:/Users/Aluno/Desktop/aula09/back/bd/itens.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/Senai2022/aleatorios/aula09/back/src/bd/itens.csv'
 INTO TABLE itens
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'

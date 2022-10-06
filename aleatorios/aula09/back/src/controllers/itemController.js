@@ -4,7 +4,7 @@ const con = require('../models/patrimonioDAO');
 const criarItem = (req, res) => {
     con.query(Item.toCreate(req.body), (err, result) => {
         if (err == null)
-            res.status(201).end();
+            res.status(201).json(req.body).end();
         else
             if (err.sqlState == 23000)//Se o ni já está cadastrado
                 res.status(406).json(err).end();

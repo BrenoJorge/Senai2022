@@ -1,4 +1,8 @@
 const toCreate = (model) => {
+    if(model.img == ""){
+        return `INSERT INTO itens VALUES (${model.ni},'${model.aquisicao}','${model.denominacao}',${model.valor},default)`;
+    }
+
     return `INSERT INTO itens VALUES (${model.ni},'${model.aquisicao}','${model.denominacao}',${model.valor},'${model.img}')`;
 }
 const toReadAll = () => {

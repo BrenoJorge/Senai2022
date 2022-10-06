@@ -44,6 +44,32 @@ end//
 
 delimiter ;
 
+-- v.2
+
+-- Crie um procedimento armazenado chamado solicita_um_item(n_sol,depto,func,prod,qtd,total)
+-- que receba estes valores e cadastre uma solicitação e um item na data atual.
+drop procedure if exists solicita_um_item;
+delimiter //
+create procedure solicita_um_item(n_sol int,depto int,func int,prod int,qtd int,total float)
+BEGIN
+	declare erro_sql tinyint default false;
+	declare continue handler for sqlexception set erro_sql = true;
+
+	insert into Solicitacoes values (n_sol,curdate(),depto,func);
+	insert into Itens_Solicitacao values (n_sol,prod,qtd,total);
+
+	IF erro_sql = false THEN
+		select * from vw_solicitacoes where Num_Sol = n_sol;
+		select 'Solicitação cadastrada com sucesso' as 'Sucesso';
+	ELSE
+		select 'Erro ao inserir solicitação' as 'Erro';
+	END IF;
+	
+end //
+delimiter ;
+
+call solicita_um_item(1055,1000,100,125,1,10);
+
 SHOW PROCEDURE STATUS;
 
 select Cod_Func, Nome_Func,sum(Valor) as Total from 

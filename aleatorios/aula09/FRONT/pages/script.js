@@ -1,6 +1,10 @@
 const cardItem = document.querySelector('.card-item');
 const modal = document.querySelectorAll('.model')
+const submit = document.querySelector("#cadastrar")
 
+submit.addEventListener('click', () => {
+    cadastrar()
+})
 
 function carregar() {
     fetch("http://localhost:4000/patrimonio/itens")
@@ -35,6 +39,37 @@ function showModal() {
     modal[1].classList.toggle("model")
 }
 
+function cadastrar() {
+    let ni = document.getElementById("ni").value
+    let aquisicao = document.getElementById("aquisicao").value
+    let denominacao = document.getElementById("denominacao").value
+    let valor = document.getElementById("valor").value
+    let img = document.getElementById("img").value
+
+    let item = {
+        "ni": ni,
+        "aquisicao": aquisicao,
+        "denominacao": denominacao,
+        "valor": valor,
+        "img": img
+    }
+
+    fetch("http://localhost:4000/patrimonio/itens", {
+        "method": "POST",
+        "headers": { "Content-Type": "application/json" },
+        body: JSON.stringify(item),
+    })
+        .then((res) => res.json())
+        .then((resp) => {
+            if (resp.ni != null) {
+                alert("item cadastrado com sucesso")
+                window.location.reload()
+            } else {
+                alert("item NÃO cadastrado")
+            }
+        })
+}
+
 function excluir(ni) {
     const options = {
         method: "DELETE"
@@ -43,7 +78,7 @@ function excluir(ni) {
         fetch(`http://localhost:4000/patrimonio/itens/${ni}`, options)
             .then(response => response.status)
             .then((resp) => {
-                if(resp == 204){
+                if (resp == 204) {
                     alert("SUCESSO")
                     window.location.reload()
                 }
