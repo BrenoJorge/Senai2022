@@ -26,7 +26,7 @@ create table entrada(
     placa_veiculo varchar(8) not null,
     entrada datetime not null,
     saida datetime not null,
-    valor numeric(4,2) not null,
+    valor numeric(5,2) not null,
     foreign key (id_cli) references cliente(id_cli),
     foreign key(placa_veiculo) references veiculo(placa)
 );
@@ -39,6 +39,7 @@ insert into telefones values(LAST_INSERT_ID(), "5253525122");
 insert into telefones values(1, "133225122");
 insert into telefones values(1, "133225122");
 insert into veiculo values("ABC_DEFG", "fiat uno", "lateral traseira amassada");
+insert into entrada values(2, "HBV2020", now(),  "2022-10-7T14:25:10", 50);
 
 -- procedure
 drop procedure if exists insere_dados;

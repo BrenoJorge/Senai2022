@@ -16,7 +16,7 @@ const deletar_cliente = ( model ) => {
 }
 
 const buscar_cliente = ( model ) => {
-    return `select * from cliente where id_cli = ${model.id}`
+    return `select * from cliente where id_cli = ${model.id_cli}`
 }
 
 module.exports = {

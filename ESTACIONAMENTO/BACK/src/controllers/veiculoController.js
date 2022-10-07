@@ -3,9 +3,9 @@ const con = require('../models/estacionamentoDAO');
 
 //CRUD veiculos
 const listarVeiculos = (req, res) => {
-    con.query(Veiculo.listar_veiculo(req.body), (err, result) => {
+    con.query(Veiculo.listar_veiculo(), (err, result) => {
         if (err == null) {
-            res.status(201).json(req.result).end();
+            res.status(201).json(result).end();
         } else {
             res.status(400).json(err).end();
         }
@@ -15,7 +15,7 @@ const listarVeiculos = (req, res) => {
 const addVeiculo = (req, res) => {
     con.query(Veiculo.add_veiculo(req.body), (err, result) => {
         if (err == null) {
-            res.status(201).json(req.result).end();
+            res.status(201).json(req.body).end();
         } else {
             res.status(400).json(err).end();
         }
@@ -25,7 +25,7 @@ const addVeiculo = (req, res) => {
 const alterarVeiculo = (req, res) => {
     con.query(Veiculo.alterar_veiculo(req.body), (err, result) => {
         if (err == null) {
-            res.status(201).json(req.result).end();
+            res.status(201).json(req.body).end();
         } else {
             res.status(400).json(err).end();
         }
@@ -35,7 +35,7 @@ const alterarVeiculo = (req, res) => {
 const deletarVeiculo = (req, res) => {
     con.query(Veiculo.deletar_veiculo(req.body), (err, result) => {
         if (err == null) {
-            res.status(201).json(req.result).end();
+            res.status(201).json(req.body).end();
         } else {
             res.status(400).json(err).end();
         }
@@ -43,9 +43,9 @@ const deletarVeiculo = (req, res) => {
 }
 
 const buscarVeiculo = (req, res) => {
-    con.query(Veiculo.buscar_veiculo(req.body), (err, result) => {
+    con.query(Veiculo.buscar_veiculo(req.params), (err, result) => {
         if (err == null) {
-            res.status(201).json(req.result).end();
+            res.status(201).json(result).end();
         } else {
             res.status(400).json(err).end();
         }

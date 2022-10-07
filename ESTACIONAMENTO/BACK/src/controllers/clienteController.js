@@ -45,9 +45,9 @@ const deletarCliente = (req, res) => {
 }
 
 const buscarCliente = (req, res) => {
-    con.query(Cliente.buscar_cliente(req.body), (err, result) => {
+    con.query(Cliente.buscar_cliente(req.params), (err, result) => {
         if (err == null) {
-            res.status(201).json(req.body).end();
+            res.status(201).json(result).end();
         } else {
             res.status(400).json(err).end();
         }
