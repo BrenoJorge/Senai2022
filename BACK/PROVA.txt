@@ -1,0 +1,13 @@
+Avaliação Backend
+
+Objetivos
+
+- Cadastrar novos produtos; ok
+- Listar os produtos cadastrados; ok
+- Criar novos departamentos; ok
+- Excluir departamentos existentes pelo id; ok
+- Criar solicitações através da procedure; ok
+- Exibir as solicitações utilizando a view criada; ok
+- Buscar produtos através do nome do produto e informar o departamento relacionado; ok
+- Buscar produtos solicitados a partir de uma mês; ok
+- Exibir o total de solicitações feitas por funcionários;
