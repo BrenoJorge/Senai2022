@@ -1,0 +1,81 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    height: 100%;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}
+.page{
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+}
+
+.card{
+    background-color: #fff;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-title{
+    font-size: 20pt;
+    margin-bottom: 15px;
+}
+
+.drop-zone{
+    width: 300px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    margin-top: 20px;
+    border: 3px dashed #bbb;
+    transition: .5s;
+}
+
+.drop-zone>span{
+    transition: .5s;
+}
+
+.btn{
+    margin-top: 20px;
+    border: 2px solid #000;
+    padding: 15px 20px;
+    font-size: 16pt;
+    cursor: pointer;
+}
+
+.btn:hover{
+    color: #fff;
+    background-color: #000;
+}
+
+.drop-zone-over{
+    border: 3px dashed rgb(83, 83, 83)!important;
+}
+
+.drop-zone-over > span{
+    transform: scale(1.2);
+}
+
+.drop-zone-full{
+    border: 3px dashed rgb(9, 128, 9)!important;
+    background-color: rgb(205, 236, 205);
+}

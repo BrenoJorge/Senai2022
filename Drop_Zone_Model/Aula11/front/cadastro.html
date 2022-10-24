@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro</title>
+</head>
+<body>
+    <div class="page">
+        <div class="card">
+            <div class="form">
+                <span class="form-title">Cadastro</span>
+                <div class="form-control">
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome">
+                </div>
+                <div class="drop-zone" id="dz" onclick="document.querySelector('#inpFile').click()" ondrop="dropHandler(event);" ondragenter="dragEnterHandler(event);" ondragleave="dragEnterHandler(event)" ondragover="dragOverHandler(event)">
+                    <span style="text-align: center;">Solte o Grosso<br><span style="opacity: .5">(ou clique)</span></span>
+                </div>
+                <input type="file" id="inpFile" onchange="inpChange(this)" hidden>
+                <button class="btn" onclick="console.log(document.querySelector('#inpFile').files)">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

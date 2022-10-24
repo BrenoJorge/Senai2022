@@ -10,6 +10,15 @@ const listarProdutos = (req, res) => {
     });
 }
 
+const alterarProduto = (req, res) => {
+    con.query(Item.alterar_produto(req.body), (err, result) => {
+        if (err == null)
+            res.status(201).json(result).end();
+        else
+            res.status(400).json(err).end()
+    });
+}
+
 const addProduto = (req, res) => {
     con.query(Item.add_produto(req.body), (err, result) => {
         if (err == null) {
@@ -27,6 +36,15 @@ const addDepartamento = (req, res) => {
         } else {
             res.status(400).json(err).end();
         }
+    })
+}
+
+const listarDepartamentos = (req, res) => {
+    con.query(Item.listar_departamentos(), (err, result) => {
+        if (err == null)
+            res.status(201).json(result).end();
+        else
+            res.status(400).json(err).end()
     })
 }
 
@@ -97,5 +115,7 @@ module.exports = {
     vwSol,
     buscarProdutoDepartamento,
     buscarProdutoMes,
-    solicitacoesFuncionario
+    solicitacoesFuncionario,
+    alterarProduto,
+    listarDepartamentos
 }

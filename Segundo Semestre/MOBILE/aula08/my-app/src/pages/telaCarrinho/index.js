@@ -10,13 +10,17 @@ export default function telaCarrinho({ navigation }) {
 
     const ler = async () => {
         try {
-            let aux = ""
             const jsonValue = await AsyncStorage.getItem('dado')
             dadosJSON = JSON.parse(jsonValue)
             dadosJSON.map((item, index) => {
-                aux += item.nome + " - " + item.descricao + "\n\r"
+                
+                    return (
+                        <View>
+                            <Text>{item.nome}</Text>
+                        </View>
+                    )
+                
             })
-            setdadoLocalStorage(aux)
         } catch (err) {
             console.log(err)
         }
@@ -24,7 +28,7 @@ export default function telaCarrinho({ navigation }) {
 
     const deletar = async () => {
         try {
-            await AsyncStorage.removeItem("dado", )
+            await AsyncStorage.removeItem("dado")
         } catch (err) {
             console.log(err)
         }

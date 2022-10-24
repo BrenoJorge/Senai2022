@@ -1,0 +1,214 @@
+*{
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: #023;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header{
+    width: 100vw;
+    height: 10vh;
+    top: 0px;
+    background-color: #000;
+    box-shadow: 0 0 5px rgba(255,255,255,0.5);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+main{
+    height: 82vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer{
+    width: 100vw;
+    height: 8vh;
+    background-color: #000;
+    box-shadow: 0 0 5px rgba(255,255,255,0.5);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0 0 5px rgba(255,255,255,0.5);
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 100px;
+}
+
+.card{
+    width: 100vw;
+    background-color: #034;
+    box-shadow: 0 0 5px rgba(255,255,255,0.5);
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dados{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-around;
+}
+
+.botoes{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-around;
+}
+
+.modal{
+    display:none;
+}
+
+.fundoModal{
+    position:absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(255,255,255,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form{
+   width: 65vw;
+   height: 65vh;
+   background-color: #023;
+   padding: 20px;
+   margin-top: 12vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.form img{
+    width: 100px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.form .comandos{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form input{
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0 0 5px rgba(255,255,255,0.5);
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 100px;
+}
+
+.form .btn{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#avatar{
+    width: 10vw;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#imgCadastro{
+    height: 100px;
+    width: 100px;
+}
+.page{
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-title{
+    font-size: 20pt;
+    margin-bottom: 15px;
+}
+
+.drop-zone{
+    width: 300px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    margin-top: 20px;
+    border: 3px dashed #bbb;
+    transition: .5s;
+}
+
+.drop-zone>span{
+    transition: .5s;
+}
+
+.btn{
+    margin-top: 20px;
+    border: 2px solid #000;
+    padding: 15px 20px;
+    font-size: 16pt;
+    cursor: pointer;
+}
+
+.btn:hover{
+    color: #fff;
+    background-color: #000;
+}
+
+.drop-zone-over{
+    border: 3px dashed rgb(83, 83, 83)!important;
+}
+
+.drop-zone-over > span{
+    transform: scale(1.2);
+}
+
+.drop-zone-full{
+    border: 3px dashed rgb(9, 128, 9)!important;
+    background-color: rgb(205, 236, 205);
+}

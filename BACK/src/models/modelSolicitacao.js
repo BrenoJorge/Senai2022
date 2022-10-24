@@ -6,8 +6,16 @@ const add_produto = ( model ) => {
     return `insert into Produtos values(${model.Cod_Produto}, "${model.Nome_produto}")`
 }
 
+const alterar_produto = ( model ) => {
+    return `update produtos set Cod_Produto=${model.Cod_Produto}, Nome_produto="${model.Nome_produto}" where Cod_Produto=${model.Cod_Produto}`
+}
+
 const add_departamento = ( model ) => {
     return `insert into Departamentos values(${model.Cod_Depto}, "${model.Nome_Depto}")`
+}
+
+const listar_departamentos = ( model ) => {
+    return `select * from Departamentos`
 }
 
 const deletar_departamento = ( model ) => {
@@ -43,5 +51,7 @@ module.exports = {
     vw_sol,
     buscar_produto_departamento,
     buscar_produto_mes,
-    solicitacoes_funcionario
+    solicitacoes_funcionario,
+    alterar_produto,
+    listar_departamentos
 }
