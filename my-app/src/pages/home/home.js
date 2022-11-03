@@ -1,5 +1,6 @@
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 import styles from "../../style/index";
+
 export default function home({ navigation }) {
   return (
     <View style={styles.start}>
@@ -11,7 +12,7 @@ export default function home({ navigation }) {
             navigation.navigate("quiz1");
           }}
         >
-          <Text>START</Text>
+          <Text style={styles.text}>START</Text>
         </TouchableOpacity>
       </View>
     </View>

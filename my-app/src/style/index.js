@@ -7,18 +7,22 @@ export default StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#c5cae9",
+    backgroundColor: "#011F26",
+    color: "#FFFFFF"
   },
   startButton: {
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#80d8ff",
+    backgroundColor: "#025E73",
     height: 50,
-    width: 50,
+    width: 80,
+    borderRadius: 10,
+    color: "#FFFFFF",
   },
   text: {
     fontSize: "1.05rem",
     fontWeight: "bold",
+    color: "red"
   },
 
   // quiz Geral
