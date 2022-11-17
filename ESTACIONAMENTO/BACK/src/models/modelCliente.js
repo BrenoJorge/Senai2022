@@ -1,22 +1,22 @@
 //clientes
 const vw_cliente = (model) => {
-    return "select * from vw_cliente"
+    return "SELECT * FROM clientes"
 }
 
 const add_cliente = ( model ) => {
-    return `call insere_dados("${model.nome}", "${model.cpf}", "${model.telefone}")`
+    return `INSERT INTO clientes VALUES(default,"${model.nome}", "${model.telefone}", "${model.endereco}")`
 }
 
 const alterar_cliente = ( model ) => {
-    return `update cliente set nome = '${model.nome}', cpf = ${model.cpf} where id_cli = ${model.id}`
+    return `update clientes set nome = '${model.nome}', telefone = "${model.telefone}", endereco = "${model.endereco}" where id = ${model.id}`
 }
 
 const deletar_cliente = ( model ) => {
-    return `delete from cliente where id_cli = ${model.id}`
+    return `delete from clientes where id = ${model.id}`
 }
 
 const buscar_cliente = ( model ) => {
-    return `select * from cliente where id_cli = ${model.id_cli}`
+    return `select * from clientes where id = ${model.id}`
 }
 
 module.exports = {

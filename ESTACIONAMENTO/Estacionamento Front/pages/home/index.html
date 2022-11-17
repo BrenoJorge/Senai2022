@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <!-- <title>Responsive Sidebar Menu</title> -->
+  <link rel="stylesheet" href="../../global/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body onload="carregar()">
+  <div class="nav">
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+      <header>My Menu</header>
+      <a href="#" class="active">
+        <i class="fas fa-qrcode"></i>
+        <span>estacionamento</span>
+      </a>
+      <a href="../cadastro/index.html">
+        <i class="fas fa-stream"></i>
+        <span>Cadastros</span>
+      </a>
+      <a href="#">
+        <i class="fas fa-calendar"></i>
+        <span>Registros</span>
+      </a>
+      <a href="#">
+        <i class="fas fa-sliders-h"></i>
+        <span>Ajuste</span>
+      </a>
+    </div>
+  </div>
+
+  <main>
+      <div class="card-vaga model">
+        <p>Livre</p>
+      </div>
+  </main>
+
+  <div id="card-add-car" class="model">
+    <div id="add-car">
+      <input type="text" id="placa-car-add" placeholder="Placa">
+      <input type="submit" id="cancelar-add" value="X" onclick="fecharAdd()">
+      <input type="submit" id="confirma-add" value="CONFIRMAR" onclick="confirmAdd()">
+    </div>
+  </div>
+
+  <script src='./script.js'></script>
+</body>
+
+</html>

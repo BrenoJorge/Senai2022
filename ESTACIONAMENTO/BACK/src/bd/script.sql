@@ -41,15 +41,3 @@ insert into telefones values(1, "133225122");
 insert into veiculo values("ABC_DEFG", "fiat uno", "lateral traseira amassada");
 insert into entrada values(2, "HBV2020", now(),  "2022-10-7T14:25:10", 50);
 
--- procedure
-drop procedure if exists insere_dados;
-delimiter //
-create procedure insere_dados(nome varchar(100), cpf varchar(11), telefone varchar(15))
-	begin
-	    declare erro_sql tinyint default false;
-	    declare continue handler for sqlexception set erro_sql = true;
-        
-        insert into cliente values(null, nome, cpf);
-        insert into telefones values(LAST_INSERT_ID(), telefone);
-    end//
-delimiter ;

@@ -3,7 +3,7 @@ const con = require('../models/estacionamentoDAO');
 
 //CRUD Clientes
 const listarClientes = (req, res) => {
-    con.query(Cliente.vw_cliente(req.body), (err, result) => {
+    con.query(Cliente.vw_cliente(), (err, result) => {
         if (err == null)
             res.status(201).json(result).end();
         else
@@ -35,7 +35,7 @@ const alterarCliente = (req, res) => {
 }
 
 const deletarCliente = (req, res) => {
-    con.query(Cliente.deletar_cliente(req.body), (err, result) => {
+    con.query(Cliente.deletar_cliente(req.params), (err, result) => {
         if (err == null) {
             res.status(201).json(req.body).end();
         } else {

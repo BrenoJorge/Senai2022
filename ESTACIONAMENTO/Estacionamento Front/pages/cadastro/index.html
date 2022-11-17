@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <!-- <title>Responsive Sidebar Menu</title> -->
+  <link rel="stylesheet" href="../../global/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="nav">
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+      <header>My Menu</header>
+      <a href="../home/index.html">
+        <i class="fas fa-qrcode"></i>
+        <span>estacionamento</span>
+      </a>
+      <a href="#" class="active">
+        <i class="fas fa-stream"></i>
+        <span>Cadastros</span>
+      </a>
+      <a href="#">
+        <i class="fas fa-calendar"></i>
+        <span>Registros</span>
+      </a>
+      <a href="#">
+        <i class="fas fa-sliders-h"></i>
+        <span>Ajuste</span>
+      </a>
+    </div>
+  </div>
+    
+
+  <main>
+    <input type="submit" class="button-9" value="cadastrar cliente" onclick="showModelCliente()">
+    <input type="submit" class="button-9" value="cadastrar veículo" onclick="showModelVeiculo()">
+  </main>
+
+  <div id="card-cadastrar" class="model">
+    <div id="cadastrar">
+      <input type="submit"id="cancelar-add" value="X" onclick="showModelCliente()">
+      <input type="text" id="nome" placeholder="Nome">
+      <input type="text" id="cpf" placeholder="Cpf">
+      <input type="date" id="dataNascimento" placeholder="data de nascimento">
+      <input type="text" id="number" placeholder="Numero de telefone">
+      <input type="submit"id="confirma-add" value="CONFIRMAR" onclick="">
+    </div>
+  </div>
+
+  <div id="card-cadastrar" class="model">
+    <div id="cadastrar">
+      <input type="text" id="placa" placeholder="Placa do carro">
+      <input type="text" id="modelo" placeholder="Modelo do carro">
+      <label for="descricao">Descrição do carro:</label>
+
+      <textarea id="descricao" name="descricao" rows="5" cols="33" placeholder="Amassado na traseira esquerda...">
+</textarea>
+
+      <input type="submit" id="cancelar-add" value="X" onclick="showModelVeiculo()">
+      <input type="submit" id="confirma-add" value="CONFIRMAR" onclick="">
+    </div>
+  </div>
+
+  <script src='./script.js'></script>
+</body>
+
+</html>

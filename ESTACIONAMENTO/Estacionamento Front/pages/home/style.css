@@ -1,0 +1,165 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    width: 100%;
+    margin: 30px;
+}
+
+.nav {
+    width: 300px;
+    height: 400px;
+}
+
+.card-vaga {
+    display: flex;
+    width: 60vw;
+    height: 60vh;
+    font-size: 30px;
+}
+
+.card-vaga {
+    background-color: white;
+    height: 100%;
+    width: 17%;
+    border-left: 2px dashed black;
+    border-right: 2px dashed black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    box-shadow: 1px 1px 20px -5px #000000c4;
+}
+
+.card-vaga>img {
+    animation-name: car-odd;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    z-index: 0;
+}
+
+
+.card-vaga>img {
+    height: 250px;
+    position: relative;
+    rotate: -180deg;
+    opacity: 0;
+}
+
+.card-vaga>p {
+    position: relative;
+    top: -10px;
+}
+
+#card-add-car {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -50px;
+    background: rgb(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#placa-car-add{
+    width: 400px;
+    height: 30px;
+    border: 2px solid rgb(221, 237, 253);
+    border-radius: 50px;
+}
+
+#confirma-add{
+    border-radius: 50px;
+    width: 200px;
+    height: 30px;
+}
+
+#confirma-add:hover{
+    transition: 0.1s;
+    filter: invert(1);
+}
+
+#cancelar-add{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    color: red;
+    position: absolute;
+    top: 280px;
+    right: 690px;
+    background-color: rgb(255, 255, 255);;
+}
+
+#cancelar-add:hover{
+    transition: 0.1s;
+    background-color: black;
+}
+
+#add-car {
+    height: 40vh;
+    width: 25vw;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.model {
+    display: none;
+    visibility: hidden;
+}
+
+@keyframes car-odd {
+    from {
+        top: -60px;
+        opacity: 1;
+    }
+
+    to {
+        top: 10px;
+        opacity: 1;
+    }
+}
+
+@media(max-width : 1250px) {
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        height: 10vh;
+        width: 100%;
+    }
+
+    .card-vaga {
+        display: flex;
+        width: 30vw;
+        height: 20vh;
+    }
+
+    .model {
+        display: none;
+        visibility: hidden;
+    }
+
+    .card-vaga>img {
+        height: 100px;
+        position: relative;
+        rotate: -180deg;
+        opacity: 0;
+    }
+
+    .nav {
+        width: 100px;
+        height: 200px;
+    }
+}
