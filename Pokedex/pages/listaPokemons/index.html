@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <title>Page title</title>
+</head>
+
+<body onload="carregar()">
+
+    <div class="body">
+        <div class="pesquisar">
+            <input type="text" placeholder="digite o número do pokemon ou o nome" id="pokemonBusca">
+            <button onclick="puxarPokemon()" class="btn">pesquisar</button>
+        </div>
+
+        <main>
+            <div class="card-pokemon model">
+
+                <div class="card-header">
+                    <h3 class="nome-pokemon">Charizard</h3>
+
+                    <h3 class="numero-pokemon">#</h3>
+                </div>
+
+                <div class="card-main">
+                    <div class="tipo-pokemon">
+
+                    </div>
+
+                    <div class="img-pokemon">
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <div id="card-info" class="model">
+            <button onclick="showModelInfo()" class="btn">X</button>
+            <div id="info-poke">
+                <h2></h2>
+                <p></p>
+                <div id="sprites"></div>
+                <div id="stats"></div>
+            </div>
+        </div>
+
+        <div id="loader">
+            <div class="skeleton-card"></div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
