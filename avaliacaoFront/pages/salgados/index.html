@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salgados</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="../login">Desconectar</a></li>
+        </ul>
+        <ul>
+            <li id="username">User Name</li>
+        </ul>
+    </header>
+    <main>
+        <button onClick="modalCad()">Cadastrar</button>
+        <div class="lista">
+            <div class="item-lista model">
+                    <img src="../../assets/coxinha.jpg" alt="Patrimonio">
+                    <p id="id">1</p>
+                    <p id="nome">coxinha</p>
+                    <p id="descricao">saboroso</p>
+                    <p id="comentario">Ver comentario</p>
+                <span><p>Remover</p></span>
+            </div>
+        </div>
+    </main>
+    <div class="modal mc model">
+        <div class="modal-body" >
+            <input type="text" class="nome" placeholder="Nome" placeholder="Nome" >
+            <input type="text" class="descricao" placeholder="descricao" placeholder="Descrição" >
+            <input type="text" class="img" placeholder="Imagem" placeholder="panqueca.png" >
+            <div class="modal-footer">
+                <button onClick="modalCad()" class="cancelar">Cancelar</button>
+                <button onClick="cadastrar()" class="cadastrar">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal ms model">
+        <div class="modal-body">
+            <p>Produto Cadastrado com Sucesso !</p>
+        </div>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>
