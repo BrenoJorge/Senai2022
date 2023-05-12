@@ -1,4 +1,4 @@
-import { StyleSheet, View} from 'react-native';
+import { StyleSheet, View, Image} from 'react-native';
 import Salvar from './src/components/Salvar'
 import Ler from './src/components/Ler'
 
